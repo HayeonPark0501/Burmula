@@ -1,0 +1,811 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+a{
+  color: #000;
+}
+
+@media all and (max-width:479px) {
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+  
+  /* main */
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+    /* font-size: 24px; */
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+  
+  .background-image{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-content{
+    width: 100%; height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+  
+  .clip-container {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .background-text {
+    font-size: 20px;
+    color: #fff;
+    opacity: 0; /* 애니메이션 시작 시 보이지 않음 */
+    transform: translateY(20px); /* 초기 위치 아래쪽 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 효과 */
+  }
+  
+  .main-image.show .background-text {
+    opacity: 1; /* 애니메이션 후 보이도록 설정 */
+    transform: translateY(0); /* 최종 위치 */
+  }
+  
+  .main-image:hover{
+    filter: grayscale(0%);
+  }
+  
+  /* .background-text {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+  } */
+  
+  .mobile-gnb {
+    padding: 20px 14px;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* top button */
+  .topBtn{
+    position: fixed; bottom: 9%; left: 34px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    background-image: url(assets/img/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transform: rotate(270deg);
+    display: none;
+  }
+  /* 스크롤이 1000px 이상 내려갔을 때 버튼을 보여줌 */
+  .topBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+  
+  .snsBtn{
+    position: fixed; bottom: 7%; right: 34px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    opacity: 80%;
+    background-image: url(assets/img/instagram-6338392_640.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    display: none;
+    cursor: pointer;
+  }
+  .snsBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+  
+  
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header{
+    font-size: 24px;
+  }
+  
+  footer{
+    width: 100%;
+  }
+  hr{
+    display: block;
+  }
+  .what {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  .Flogo{
+    /* display: flex; */
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+  .Flogo img{
+    display: inline;
+    /* width: 400px; */
+  }
+  
+  .footerFrame{
+    display: none;
+    width: 100%px; height: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .info{
+    /* font-size: 11px; */
+    display: none;
+  }
+  .number{
+    margin-top: 20px;
+  }
+  .fGnb{
+    display: none;
+    font-size: 11px;
+  }
+  .fGnb li{
+    margin: 3px 0;
+  }
+  .sns{
+    display: none;
+    font-size: 11px;
+  }
+  
+  .blabla{
+    display: none;
+    /* text-align: start; */
+    /* font-size: 10px; */
+  }
+  
+  
+  .domain{
+    display: none;
+    /* text-align: center; */
+    /* font-size: 10px; */
+    /* color: #999; */
+  }
+}
+
+@media all and (min-width:480px) and (max-width:767px) {
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+  
+  /* main */
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+  
+  .background-image{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-content{
+    width: 100%; height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+  }
+  .main-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+  
+  .clip-container {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .background-text {
+    font-size: 20px;
+    color: #fff;
+    opacity: 0; /* 애니메이션 시작 시 보이지 않음 */
+    transform: translateY(20px); /* 초기 위치 아래쪽 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 효과 */
+  }
+  
+  .main-image.show .background-text {
+    opacity: 1; /* 애니메이션 후 보이도록 설정 */
+    transform: translateY(0); /* 최종 위치 */
+  }
+  
+  .main-image:hover{
+    filter: grayscale(0%);
+  }
+  
+  /* .background-text {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+  } */
+  
+  .mobile-gnb {
+    padding: 20px 14px;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* top button */
+  .topBtn{
+    position: fixed; bottom: 9%; left: 34px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    background-image: url(assets/img/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transform: rotate(270deg);
+    display: none;
+  }
+  /* 스크롤이 1000px 이상 내려갔을 때 버튼을 보여줌 */
+  .topBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+  
+  .snsBtn{
+    position: fixed; bottom: 7%; right: 34px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    opacity: 80%;
+    background-image: url(assets/img/instagram-6338392_640.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    display: none;
+    cursor: pointer;
+  }
+  .snsBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+  
+  
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header{
+    font-size: 24px;
+  }
+  
+  footer{
+    width: 100%;
+  }
+  hr{
+    display: block;
+  }
+  .what {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  .Flogo{
+    /* display: flex; */
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+  .Flogo img{
+    display: inline;
+    /* width: 400px; */
+  }
+  
+  .footerFrame{
+    display: none;
+    width: 100%px; height: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .info{
+    /* font-size: 11px; */
+    display: none;
+  }
+  .number{
+    margin-top: 20px;
+  }
+  .fGnb{
+    display: none;
+    font-size: 11px;
+  }
+  .fGnb li{
+    margin: 3px 0;
+  }
+  .sns{
+    display: none;
+    font-size: 11px;
+  }
+  
+  .blabla{
+    display: none;
+    /* text-align: start; */
+    /* font-size: 10px; */
+  }
+  
+  .domain{
+    display: none;
+    /* text-align: center; */
+    /* font-size: 10px; */
+    /* color: #999; */
+  }
+}
+
+@media all and (min-width:768px) and (max-width:2560px) {
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+  
+  /* main */
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+  
+  .background-image{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .main-content{
+    width: 100%; height: 100%;
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* flex-direction: column; */
+  }
+  .main-image {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    overflow: hidden;
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+  }
+  
+  .clip-container {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  .background-text {
+    font-size: 20px;
+    color: #fff;
+    opacity: 0; /* 애니메이션 시작 시 보이지 않음 */
+    transform: translateY(20px); /* 초기 위치 아래쪽 */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* 애니메이션 효과 */
+  }
+  
+  .main-image.show .background-text {
+    opacity: 1; /* 애니메이션 후 보이도록 설정 */
+    transform: translateY(0); /* 최종 위치 */
+  }
+  
+  .main-image:hover{
+    filter: grayscale(0%);
+  }
+  
+  /* .background-text {
+    position: absolute;
+    color: #fff;
+    font-size: 20px;
+  } */
+  
+  .mobile-gnb {
+    padding: 20px 14px;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  /* top button */
+  .topBtn{
+    position: fixed; bottom: 9%; left: 34px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    background-image: url(assets/img/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transform: rotate(270deg);
+    display: none;
+  }
+  /* 스크롤이 1000px 이상 내려갔을 때 버튼을 보여줌 */
+  .topBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+  
+  .snsBtn{
+    position: fixed; bottom: 7%; right: 34px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    opacity: 80%;
+    background-image: url(assets/img/instagram-6338392_640.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    display: none;
+    cursor: pointer;
+  }
+  .snsBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+  
+  
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header{
+    font-size: 24px;
+  }
+  
+  footer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  hr{
+    display: none;
+  }
+  .what {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  .Flogo{
+    /* display: flex; */
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .Flogo img{
+    display: inline;
+    /* width: 400px; */
+  }
+  
+  .footerFrame{
+    /* display: none; */
+    width: 100%; height: auto;
+    padding: 0 20%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .info{
+    font-size: 11px;
+    /* display: none; */
+  }
+  .number{
+    margin-top: 20px;
+  }
+  .fGnb{
+    /* display: none; */
+    font-size: 11px;
+  }
+  .fGnb li{
+    margin: 3px 0;
+  }
+  .sns{
+    /* display: none; */
+    font-size: 11px;
+  }
+  
+  .blabla{
+    /* display: none; */
+    text-align: center;
+    font-size: 10px;
+  }
+  .blabla span{
+    font-weight: 500;
+  }
+  
+  .domain{
+    /* display: none; */
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+  }
+}

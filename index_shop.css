@@ -1,0 +1,786 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+a{
+  color: #000;
+}
+
+@media all and (max-width:479px) {
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+
+  /* main */
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+    font-size: 24px;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+
+  .mobile-gnb {
+    padding: 20px 14px;
+  }
+
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-content{
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 13px;
+    margin-left: 2%;
+    /* background-color: #ccc; */
+
+  }
+  .nav-content a {
+    display: block;
+    /* flex: 1 1 auto; */
+    /* background-color: #777; */
+    margin: 2%;
+    text-align: center;
+  }
+
+  .nav-content a:hover {
+    color: #ccc;
+  }
+  
+  .flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+  }
+
+  .clip-container{
+    width: 232px;
+    margin: 10px;
+    font-size: 15px;
+  }
+  .clip-container img{
+    width: 100%;
+  }
+
+  /* top button */
+  .topBtn{
+    position: fixed; bottom: 9%; left: 34px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    background-image: url(assets/img/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transform: rotate(270deg);
+    display: none;
+  }
+  /* 스크롤이 1000px 이상 내려갔을 때 버튼을 보여줌 */
+  .topBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+
+  .number-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0px;
+    /* background-color: #777; */
+  }
+  .number-content img {
+    width: 15px;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  .left_arrow {
+    /* 좌우 반전 */
+    transform: scaleX(-1);
+  }
+  .number-content a {
+    font-size: 15px;
+    display: inline-block;
+    margin: 0px 10px;
+  }
+  .number-content a:hover {
+    color: #ccc;
+  }
+
+  /* footer */
+  footer{
+    width: 100%;
+  }
+  hr{
+    display: block;
+  }
+  .what {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  .Flogo{
+    /* display: flex; */
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+  .Flogo img{
+    display: inline;
+    /* width: 400px; */
+  }
+  
+  .footerFrame{
+    display: none;
+    width: 100%px; height: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .info{
+    /* font-size: 11px; */
+    display: none;
+  }
+  .number{
+    margin-top: 20px;
+  }
+  .fGnb{
+    display: none;
+    font-size: 11px;
+  }
+  .fGnb li{
+    margin: 3px 0;
+  }
+  .sns{
+    display: none;
+    font-size: 11px;
+  }
+  
+  .blabla{
+    display: none;
+    /* text-align: start; */
+    /* font-size: 10px; */
+  }
+  
+  
+  .domain{
+    display: none;
+    /* text-align: center; */
+    /* font-size: 10px; */
+    /* color: #999; */
+  }
+}
+
+@media all and (min-width:480px) and (max-width:767px) {
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+
+  /* main */
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+    font-size: 24px;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+
+  .mobile-gnb {
+    padding: 20px 14px;
+  }
+
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-content{
+    width: 100%;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 13px;
+    margin-left: 10%;
+    /* background-color: #ccc; */
+
+  }
+  .nav-content a {
+    display: block;
+    /* flex: 1 1 auto; */
+    /* background-color: #777; */
+    margin: 1.5%;
+    text-align: center;
+  }
+
+  .nav-content a:hover {
+    color: #ccc;
+  }
+  
+  .flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+  }
+
+  .clip-container{
+    width: 232px;
+    margin: 10px;
+    font-size: 15px;
+  }
+  .clip-container img{
+    width: 100%;
+  }
+
+  /* top button */
+  .topBtn{
+    position: fixed; bottom: 9%; left: 34px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    background-image: url(assets/img/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transform: rotate(270deg);
+    display: none;
+  }
+  /* 스크롤이 1000px 이상 내려갔을 때 버튼을 보여줌 */
+  .topBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+
+  .number-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0px;
+    /* background-color: #777; */
+  }
+  .number-content img {
+    width: 15px;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  .left_arrow {
+    /* 좌우 반전 */
+    transform: scaleX(-1);
+  }
+  .number-content a {
+    font-size: 15px;
+    display: inline-block;
+    margin: 0px 10px;
+  }
+  .number-content a:hover {
+    color: #ccc;
+  }
+
+  /* footer */
+  footer{
+    width: 100%;
+  }
+  hr{
+    display: block;
+  }
+  .what {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  .Flogo{
+    /* display: flex; */
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+  .Flogo img{
+    display: inline;
+    /* width: 400px; */
+  }
+  
+  .footerFrame{
+    display: none;
+    width: 100%px; height: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .info{
+    /* font-size: 11px; */
+    display: none;
+  }
+  .number{
+    margin-top: 20px;
+  }
+  .fGnb{
+    display: none;
+    font-size: 11px;
+  }
+  .fGnb li{
+    margin: 3px 0;
+  }
+  .sns{
+    display: none;
+    font-size: 11px;
+  }
+  
+  .blabla{
+    display: none;
+    /* text-align: start; */
+    /* font-size: 10px; */
+  }
+  
+  
+  .domain{
+    display: none;
+    /* text-align: center; */
+    /* font-size: 10px; */
+    /* color: #999; */
+  }
+}
+
+@media all and (min-width:768px) and (max-width:2560px) {
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    /* padding: 0 20px; */
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+
+  /* main */
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+    font-size: 24px;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+
+  .mobile-gnb {
+    padding: 20px 14px;
+  }
+
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .nav-content{
+    width: 100%;
+    font-size: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 13px;
+    /* margin-left: 3%; */
+    /* background-color: #ccc; */
+
+  }
+  .nav-content a {
+    display: block;
+    flex: 1 1 auto;
+    /* background-color: #777; */
+    margin: 1.5%;
+    text-align: center;
+  }
+
+  .nav-content a:hover {
+    color: #ccc;
+  }
+
+  .main-image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .web-container {
+    width: 100%;
+    display: flex;
+  }
+  
+  .flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding: 10px; */
+  }
+
+  .clip-container{
+    width: 300px;
+    margin: 10px;
+    font-size: 18px;
+  }
+  .clip-container img{
+    width: 100%;
+  }
+
+  /* top button */
+  .topBtn{
+    position: fixed; bottom: 9%; left: 34px;
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    border: 1px solid #333;
+    background-color: #d9d9d9;
+    opacity: 65%;
+    background-image: url(assets/img/arrow_forward_ios_24dp_000000_FILL0_wght400_GRAD0_opsz24.png);
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    transform: rotate(270deg);
+    display: none;
+  }
+  /* 스크롤이 1000px 이상 내려갔을 때 버튼을 보여줌 */
+  .topBtn.show {
+    display: block; /* 나타나도록 설정 */
+  }
+
+  .number-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0px;
+    /* background-color: #777; */
+  }
+  .number-content img {
+    width: 35px;
+    margin: 0px 10px;
+    cursor: pointer;
+  }
+  .left_arrow {
+    /* 좌우 반전 */
+    transform: scaleX(-1);
+  }
+  .number-content a {
+    font-size: 26px;
+    display: inline-block;
+    margin: 0px 10px;
+  }
+  .number-content a:hover {
+    color: #ccc;
+  }
+
+  /* footer */
+  footer{
+    width: 100%;
+  }
+  footer hr{
+    display: none;
+  }
+  .what {
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  
+  .Flogo{
+    /* display: flex; */
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .footerFrame{
+    /* display: none; */
+    width: 100%px; height: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .info{
+    font-size: 11px;
+    /* display: none; */
+  }
+  .number{
+    margin-top: 20px;
+  }
+  .fGnb{
+    /* display: none; */
+    font-size: 11px;
+  }
+  .fGnb li{
+    margin: 3px 0;
+  }
+  .sns{
+    /* display: none; */
+    font-size: 11px;
+  }
+  
+  .blabla{
+    /* display: none; */
+    text-align: start;
+    font-size: 10px;
+  }
+  
+  
+  .domain{
+    /* display: none; */
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+  }
+}

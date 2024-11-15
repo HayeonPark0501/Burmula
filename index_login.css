@@ -1,0 +1,735 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+main, footer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+a{
+  color: #000;
+}
+input{
+  border: none;
+  border-bottom: 1.5px solid #333;
+}
+button{
+  cursor: pointer;
+  margin-bottom: 7px;
+}
+
+@media all and (max-width:479px) {
+  .mobile-mainHeader {
+    position: fixed; top: 0; left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+  
+  /* main */
+  
+  main{
+    width: 100%;
+    /* max-width: 450px; */
+    /* background-color: aqua; */
+    margin-top: 10%;
+  }
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+  }
+  .mobile-gnb li {
+    margin-bottom: 15px;
+  }
+  .frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+  
+  .login-container{
+    width: 450px; height: 470px;
+    /* background-color: #777; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .input-field{
+    width: 430px; height: 50px;
+  }
+  
+  .checkbox-container{
+    width: 430px;
+    padding: 10px 0px;
+  }
+  label{
+    font-size: 11px;
+  }
+  
+  .loginBtn{
+    width: 430px; height: 50px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #000;
+  }
+  .kakao{
+    width: 430px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: #F9E000;
+  }
+  .kakao img{
+    width: 21px;
+    margin-right: 5px;
+  }
+  .naver{
+    width: 430px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #00DE54;
+    background-color: #fff;
+  }
+  .naver img{
+    width: 15px;
+    margin-right: 5px;
+  }
+  .join{
+    width: 430px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: #e8e8e8;
+  }
+  .link{
+    width: 215px; height: 20px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+  }
+  .link a{
+    font-size: 11px;
+  }
+  .non-member:hover{
+    color: #e8e8e8;
+  }
+  .find-id:hover{
+    color: #e8e8e8;
+  }
+  .find-password:hover{
+    color: #e8e8e8;
+  }
+
+  .footer {
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    text-align: center;
+  }
+  .Flogo-content{
+    width: 100%;
+    margin-bottom: 10px;
+    /* background-color: #999; */
+    text-align: center;
+  }
+  .Flogo {
+    display: inline;
+    width: 437px; height: auto;
+  }
+  .footer-link {
+    width: 100%; height: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #333; */
+  }
+  .footer-link ul {
+    display: flex;
+  }
+  .footer-link li{
+    display: block;
+    width: 90px; height: 20px;
+    /* background-color: #F9E000; */
+  }
+  .footer-link a {
+    font-size: 11px;
+  }
+
+  .domain {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    /* background-color: #00DE54; */
+  }
+}
+
+@media all and (min-width:480px) and (max-width:767px) {
+  .mobile-mainHeader {
+    position: fixed; top: 0; left: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 45px;
+    align-items: center;
+    z-index: 1002;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+    cursor: pointer;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+    cursor: pointer;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+    cursor: pointer;
+  }
+  
+  /* main */
+  
+  main{
+    width: 100%;
+    /* max-width: 450px; */
+    /* background-color: aqua; */
+    margin: 0 auto;
+    margin-top: 10%;
+  }
+  
+  .mobile-gnb {
+    position: fixed; top: 45px; left: 0;
+    width: 100%;
+    padding: 20px 14px;
+    background-color: #fff;
+    display: none;
+    z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+  }
+  .mobile-gnb li {
+    margin-bottom: 15px;
+  }
+  .frame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+
+
+  .login-container{
+    width: 450px; height: 470px;
+    /* background-color: #777; */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .input-field{
+    width: 430px; height: 50px;
+  }
+  
+  .checkbox-container{
+    width: 430px;
+    padding: 10px 0px;
+  }
+  label{
+    font-size: 11px;
+  }
+  
+  .loginBtn{
+    width: 430px; height: 50px;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    background-color: #000;
+  }
+  .kakao{
+    width: 430px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: #F9E000;
+  }
+  .kakao img{
+    width: 21px;
+    margin-right: 5px;
+  }
+  .naver{
+    width: 430px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #00DE54;
+    background-color: #fff;
+  }
+  .naver img{
+    width: 15px;
+    margin-right: 5px;
+  }
+  .join{
+    width: 430px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: none;
+    background-color: #e8e8e8;
+  }
+  .link{
+    width: 215px; height: 20px;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+  }
+  .link a{
+    font-size: 11px;
+  }
+  .non-member:hover{
+    color: #e8e8e8;
+  }
+  .find-id:hover{
+    color: #e8e8e8;
+  }
+  .find-password:hover{
+    color: #e8e8e8;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    /* max-width: 450px; */
+    margin: 0 auto;
+    
+  }
+  .Flogo-content{
+    width: 100%; height: auto;
+    margin-bottom: 10px;
+    /* background-color: #999; */
+    text-align: center;
+  }
+  .Flogo{
+    display: inline;
+    width: 437px;
+  }
+  .footer-link {
+    width: 100%; height: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* background-color: #333; */
+  }
+  .footer-link ul {
+    display: flex;
+  }
+  .footer-link li{
+    display: block;
+    width: 90px; height: 20px;
+    /* background-color: #F9E000; */
+  }
+  .footer-link a {
+    font-size: 11px;
+  }
+
+  .domain {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    /* background-color: #00DE54; */
+  }
+}
+
+@media all and (min-width:768px) and (max-width:2560px) {
+    .mobile-mainHeader {
+      position: fixed; top: 0; left: 0;
+      display: flex;
+      justify-content: space-between;
+      width: 100%; height: 45px;
+      align-items: center;
+      z-index: 1002;
+    }
+    
+    .shopping{
+      width: 250px; height: 100%;
+      position: fixed; top: 0; right: -100%;
+      background-color: #fff;
+      box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+      transition: right 0.5s ease;
+      z-index: 1000;
+    }
+    
+    /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+    .shopping.open {
+      right: 0;
+    }
+    
+    /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+    .shopping-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 999;
+    }
+    
+    .shoppingFrame {
+      width: 220px; height: 100%;
+      margin-top: 20%;
+      margin-left: 5%;
+    }
+    .shoppingFrame h2 {
+      font-size: 21px;
+      display: block;
+      margin-bottom: 5%;
+    }
+    .shoppingFrame hr{
+      color: #777;
+    }
+    .shoppingFrame p{
+      display: block;
+      text-align: center;
+      padding: 50px 0px;
+      color: #777;
+    }
+    
+    .hamburger-mobile{
+      width: 42px; height: 42px;
+      cursor: pointer;
+    }
+    .logo-mobile {
+      width: 158px; height: 25px;
+      cursor: pointer;
+    }
+    .bag-mobile{
+      width: 32px; height: 32px;
+      cursor: pointer;
+    }
+    
+    /* main */
+    
+    main{
+      width: 100%;
+      /* max-width: 450px; */
+      /* background-color: aqua; */
+      margin: 0 auto;
+      margin-top: 10%;
+      margin-bottom: 5%;
+    }
+    
+    .mobile-gnb {
+      position: fixed; top: 45px; left: 0;
+      width: 100%;
+      padding: 20px 14px;
+      background-color: #fff;
+      display: none;
+      z-index: 1001; /* 헤더보다 낮은 z-index 설정 */
+    }
+    .mobile-gnb li {
+      margin-bottom: 15px;
+    }
+    .frame {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .add-mobile{
+      width: 28px;
+    }
+    .mobile-sub{
+      padding: 8px 15px;
+      display: none;
+    }
+    .mobile-sub li{
+      padding: 3px 0;
+    }
+    
+    .login-container{
+      width: 600px; height: 470px;
+      /* background-color: #777; */
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .input-field{
+      width: 560px; height: 50px;
+    }
+    
+    .checkbox-container{
+      width: 560px;
+      padding: 10px 0px;
+    }
+    label{
+      font-size: 11px;
+    }
+    
+    .loginBtn{
+      width: 560px; height: 50px;
+      border-radius: 5px;
+      border: none;
+      color: #fff;
+      background-color: #000;
+    }
+    .kakao{
+      width: 560px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: none;
+      background-color: #F9E000;
+    }
+    .kakao img{
+      width: 21px;
+      margin-right: 5px;
+    }
+    .naver{
+      width: 560px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: 1px solid #00DE54;
+      background-color: #fff;
+    }
+    .naver img{
+      width: 15px;
+      margin-right: 5px;
+    }
+    .join{
+      width: 560px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
+      border: none;
+      background-color: #e8e8e8;
+    }
+    .link{
+      width: 215px; height: 20px;
+      display: flex; 
+      justify-content: space-between;
+      align-items: center;
+    }
+    .link a{
+      font-size: 11px;
+    }
+    .non-member:hover{
+      color: #e8e8e8;
+    }
+    .find-id:hover{
+      color: #e8e8e8;
+    }
+    .find-password:hover{
+      color: #e8e8e8;
+    }
+  
+    .footer {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      width: 100%;
+      /* max-width: 450px; */
+      margin: 0 auto;
+      
+    }
+    .Flogo-content{
+      width: 100%; height: auto;
+      margin-bottom: 10px;
+      /* background-color: #999; */
+      text-align: center;
+    }
+    .Flogo{
+      display: inline;
+      width: 816px;
+    }
+    .footer-link {
+      width: 100%; height: 20px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      /* background-color: #333; */
+    }
+    .footer-link ul {
+      display: flex;
+    }
+    .footer-link li{
+      display: block;
+      width: 90px; height: 20px;
+      /* background-color: #F9E000; */
+    }
+    .footer-link a {
+      font-size: 11px;
+    }
+  
+    .domain {
+      display: block;
+      text-align: center;
+      font-size: 10px;
+      color: #999;
+      /* background-color: #00DE54; */
+    }
+  }
+
+

@@ -1,0 +1,1137 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+a{
+  color: #000;
+}
+
+@media all and (max-width:479px) {
+  .web-header{
+    display: none;
+  }
+  .web-login{
+    display: none;
+  }
+  .background{
+    display: flex;
+    position: absolute;
+    width: 100%; height: 100vh;
+    z-index: -1;
+  }
+  .background-Frame{
+    width: 300%; width: 100%;
+  }
+  .background-image{
+    
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+  }
+  
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  /* 헤더에 흰색 배경색을 추가할 때 사용할 클래스 */
+  .header-white-background {
+    background-color: #fff;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+  }
+  .login{
+    font-size: 21px;
+    display: none;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+  }
+  
+  
+  
+  
+  .main-content{
+    width: 100%; height: 100%;
+    background-color: #fff;
+  }
+  
+  .mobile-gnb {
+    padding: 20px 14px;
+    display: none;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header{
+    font-size: 24px;
+  }
+  /* mobil-chatBtn */
+  .mobile-chat{
+    display: none;
+    position: absolute; bottom: 13%; right: 5%;
+    width: 250px; height: 390px;
+    background-color: #e7e7e7;
+    border-radius: 20px;
+  }
+  .cFrame1{
+    width: 341px; height: 90px;
+    padding-bottom: 10px;
+  }
+  .cLogo1{
+    width: 50px; height: 50px;
+    float: left; 
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-image: url(assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #fff;
+  }
+  .clogoFrame1 {
+    width: 110px; height: 50px;
+    float: left;
+    margin-top: 25px;
+  }
+  .clogoFrame1 h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+  }
+  .clogoFrame1 a{
+    display: block;
+    width: 85px; height: 20px;
+    font-size: 10px;
+    text-align: center;
+    /* padding-top: 3px; */
+    border-radius: 15px;
+    float: left;
+    /* padding-left: 0px; */
+  }
+  .clogoFrame1 a:hover{
+    background-color: #fff;
+  }
+  .clogoFrame1 img{
+    width: 12px; height: 12px;
+    padding-top: 3px;
+  }
+  
+  .cFrame2 {
+    width: 220px; height: 150px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color: #fff;
+  }
+  .cLogo2 {
+    width: 40px; height: 40px;
+    float: left; 
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: 1px solid #9a9a9a;
+    background-image: url(assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #fff;
+  }
+  .clogoFrame2 h2{
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  .cTex{
+    width: 150px; height: 75px;
+    /* background-color: #9a9a9a; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 6; */
+    -webkit-box-orient: vertical;
+  }
+  .cTex p{
+    display: block;
+    font-size: 10px;
+  }
+  .cTex span{
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .ask{
+    width: 200px; height: 30px;
+    border-radius: 23px;
+    background-color: #9a9a9a;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 9px;
+  }
+  .ask:hover{
+    background-color: #000;
+  }
+  .ask p{
+    display: inline-block;
+    font-size: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .cFrame3{
+    width: 220px; height: 50px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cFrame3 p{
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 10px;
+    
+  }
+  .cFrame3 a{
+    display: block;
+    width: 28px; height: 28px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 13px;
+  }
+  .cFrame3 a img{
+    width: 100%; height: 100%;
+  }
+  .cBottom{
+    width: 221px; height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 43%;
+  }
+  .cHome, .cMessege, .cSetting{
+    text-align: center;
+    cursor: pointer;
+  }
+  .cHome p, .cMessege p, .cSetting p{
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  .cHome{
+    width: 45px; height: 45px;
+    margin-bottom: 5px;
+  }
+  .cHome img{
+    width: 29px; height: 29px;
+  }
+  .cMessege{
+    width: 45px; height: 45px;
+    margin-top: 2px;
+  }
+  .cMessege img{
+    width: 25px; height: 25px;
+  }
+  .cSetting{
+    width: 45px; height: 45px;
+  }
+  .cSetting img{
+    width: 27px; height: 27px;
+  }
+  
+  .mobile-chatBtn{
+    position: fixed; bottom: 5%; right: 5%;
+    width: 50px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .mobile-chatBtn p{
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  
+  .mobile-chatclose{
+    position: fixed; bottom: 5%; right: 5%;
+    width: 50px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .mobile-chatclose img{
+    width: 25px;
+  }
+}
+
+@media all and (min-width:480px) and (max-width:767px) {
+  .web-header{
+    display: none;
+  }
+  .web-login{
+    display: none;
+  }
+  .background{
+    display: flex;
+    position: absolute;
+    width: 100%; height: 100vh;
+    z-index: -1;
+  }
+  .background-Frame{
+    width: 300%; width: 100%;
+  }
+  .background-image{
+    
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+  }
+  
+  .mobile-mainHeader {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  /* 헤더에 흰색 배경색을 추가할 때 사용할 클래스 */
+  .header-white-background {
+    background-color: #fff;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    width: 42px; height: 42px;
+  }
+  .logo-mobile {
+    width: 158px; height: 25px;
+  }
+  .login{
+    font-size: 21px;
+    display: none;
+  }
+  .bag-mobile{
+    width: 32px; height: 32px;
+  }
+  
+  
+  
+  
+  .main-content{
+    width: 100%; height: 100%;
+    background-color: #fff;
+  }
+  
+  .mobile-gnb {
+    padding: 20px 14px;
+    display: none;
+  }
+  .add-mobile{
+    width: 28px;
+  }
+  .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  }
+  .mobile-sub li{
+    padding: 3px 0;
+  }
+  
+  .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header{
+    font-size: 24px;
+  }
+  /* mobil-chatBtn */
+  .mobile-chat{
+    display: none;
+    position: absolute; bottom: 13%; right: 5%;
+    width: 250px; height: 390px;
+    background-color: #e7e7e7;
+    border-radius: 20px;
+  }
+  .cFrame1{
+    width: 341px; height: 90px;
+    padding-bottom: 10px;
+  }
+  .cLogo1{
+    width: 50px; height: 50px;
+    float: left; 
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-image: url(assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #fff;
+  }
+  .clogoFrame1 {
+    width: 110px; height: 50px;
+    float: left;
+    margin-top: 25px;
+  }
+  .clogoFrame1 h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+  }
+  .clogoFrame1 a{
+    display: block;
+    width: 85px; height: 20px;
+    font-size: 10px;
+    text-align: center;
+    /* padding-top: 3px; */
+    border-radius: 15px;
+    float: left;
+    /* padding-left: 0px; */
+  }
+  .clogoFrame1 a:hover{
+    background-color: #fff;
+  }
+  .clogoFrame1 img{
+    width: 12px; height: 12px;
+    padding-top: 3px;
+  }
+  
+  .cFrame2 {
+    width: 220px; height: 150px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color: #fff;
+  }
+  .cLogo2 {
+    width: 40px; height: 40px;
+    float: left; 
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: 1px solid #9a9a9a;
+    background-image: url(assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #fff;
+  }
+  .clogoFrame2 h2{
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  .cTex{
+    width: 150px; height: 75px;
+    /* background-color: #9a9a9a; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 6; */
+    -webkit-box-orient: vertical;
+  }
+  .cTex p{
+    display: block;
+    font-size: 10px;
+  }
+  .cTex span{
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .ask{
+    width: 200px; height: 30px;
+    border-radius: 23px;
+    background-color: #9a9a9a;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 9px;
+  }
+  .ask:hover{
+    background-color: #000;
+  }
+  .ask p{
+    display: inline-block;
+    font-size: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .cFrame3{
+    width: 220px; height: 50px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cFrame3 p{
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 10px;
+    
+  }
+  .cFrame3 a{
+    display: block;
+    width: 28px; height: 28px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 13px;
+  }
+  .cFrame3 a img{
+    width: 100%; height: 100%;
+  }
+  .cBottom{
+    width: 221px; height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 43%;
+  }
+  .cHome, .cMessege, .cSetting{
+    text-align: center;
+    cursor: pointer;
+  }
+  .cHome p, .cMessege p, .cSetting p{
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  .cHome{
+    width: 45px; height: 45px;
+    margin-bottom: 5px;
+  }
+  .cHome img{
+    width: 29px; height: 29px;
+  }
+  .cMessege{
+    width: 45px; height: 45px;
+    margin-top: 2px;
+  }
+  .cMessege img{
+    width: 25px; height: 25px;
+  }
+  .cSetting{
+    width: 45px; height: 45px;
+  }
+  .cSetting img{
+    width: 27px; height: 27px;
+  }
+  
+  .mobile-chatBtn{
+    position: fixed; bottom: 5%; right: 5%;
+    width: 50px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .mobile-chatBtn p{
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  
+  .mobile-chatclose{
+    position: fixed; bottom: 5%; right: 5%;
+    width: 50px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .mobile-chatclose img{
+    width: 25px;
+  }
+}
+
+
+@media all and (min-width:768px) and (max-width:2560px) {
+  .background{
+    display: flex;
+    position: absolute;
+    width: 100%; height: 100vh;
+    z-index: -1;
+  }
+  .background-Frame{
+    width: 300%; width: 100%;
+  }
+  .background-image{
+    
+    height: 100%;
+    width: 100%;
+    z-index: -10;
+  }
+  
+  .mobile-mainHeader {
+    /* display: none; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  /* 헤더에 흰색 배경색을 추가할 때 사용할 클래스 */
+  .header-white-background {
+    background-color: #fff;
+  }
+  
+  .shopping{
+    width: 250px; height: 100%;
+    position: fixed; top: 0; right: -100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: right 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* 쇼핑 영역을 화면에 띄울 때 사용할 클래스 */
+  .shopping.open {
+    right: 0;
+  }
+  
+  /* 쇼핑 영역 외부 클릭을 감지하는 오버레이 */
+  .shopping-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 999;
+  }
+  
+  .shoppingFrame {
+    width: 220px; height: 100%;
+    margin-top: 20%;
+    margin-left: 5%;
+  }
+  .shoppingFrame h2 {
+    font-size: 21px;
+    display: block;
+    margin-bottom: 5%;
+  }
+  .shoppingFrame hr{
+    color: #777;
+  }
+  .shoppingFrame p{
+    display: block;
+    text-align: center;
+    padding: 50px 0px;
+    color: #777;
+  }
+  
+  .hamburger-mobile{
+    display: none;
+    /* width: 42px; height: 42px; */
+  }
+  .logo-mobile {
+    display: none;
+    /* width: 158px; height: 25px; */
+  }
+  .bag-mobile{
+    display: none;
+    width: 32px; height: 32px;
+  }
+
+  
+  .web-login {
+    position: absolute; top: 2%; right: 2%;
+    width: 90px; height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .login{
+    font-size: 21px;
+    display: block;
+  }
+  .web-bag {
+    width: 32px;
+    cursor: pointer;
+  }
+  
+  
+  .web-wrap{
+    display: flex;
+    justify-content: space-between;
+    width: 100%; height: 100%;
+  }
+  .web-header{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%; height: 100vh;
+    background-color: #fff;
+  }
+  .web-logo{
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 15%;
+  }
+  .web-gnb{
+    width: 100%;
+    margin-top: 15%;
+    margin-left: 20%;
+  }
+  .web-gnb li {
+    margin-bottom: 15px;
+  }
+  .web-gnb li a{
+    font-size: 23px;
+  }
+  .web-sub {
+    font-size: 18px;
+    margin: 20px;
+    display: none;
+  }
+
+  .background{
+    position: static;
+    width: 70%; height: 100vh;
+  }
+  .background-Frame{
+    width: 100%;
+  }
+  
+  .mobile-mainHeader{
+    display: none;
+  }
+  .hamburger-mobile{
+    display: none;
+  }
+  .logo-mobile{
+    display: none;
+    width: 343px; height: 55px;
+    margin: 10px 30px;
+  }
+  
+
+  .mobile-gnb{
+    display: none;
+    width: 100%;
+    max-width: 343px;
+    margin: 10px;
+  }
+  .mobile-gnb li a{
+    font-size: 29px;
+  }
+  .mobile-sub {
+    font-size: 26px;
+  }
+  .add-mobile{
+    display: none;
+  }
+
+
+
+  
+  /* .main-content{
+    width: 100%; height: 100%;
+    background-color: #fff;
+  } */
+  
+  /* .mobile-gnb {
+    padding: 20px 14px;
+    display: none;
+  } */
+  /* .add-mobile{
+    width: 28px;
+  } */
+  /* .mobile-sub{
+    padding: 8px 15px;
+    display: none;
+  } */
+  /* .mobile-sub li{
+    padding: 3px 0;
+  } */
+  
+  /* .content-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .frame{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .list-header{
+    font-size: 24px;
+  } */
+
+
+  /* mobil-chatBtn */
+  .mobile-chat{
+    display: none;
+    position: absolute; bottom: 13%; right: 5%;
+    width: 250px; height: 390px;
+    background-color: #e7e7e7;
+    border-radius: 20px;
+  }
+  .cFrame1{
+    width: 341px; height: 90px;
+    padding-bottom: 10px;
+  }
+  .cLogo1{
+    width: 50px; height: 50px;
+    float: left; 
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    background-image: url(assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #fff;
+  }
+  .clogoFrame1 {
+    width: 110px; height: 50px;
+    float: left;
+    margin-top: 25px;
+  }
+  .clogoFrame1 h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 4px;
+  }
+  .clogoFrame1 a{
+    display: block;
+    width: 85px; height: 20px;
+    font-size: 10px;
+    text-align: center;
+    /* padding-top: 3px; */
+    border-radius: 15px;
+    float: left;
+    /* padding-left: 0px; */
+  }
+  .clogoFrame1 a:hover{
+    background-color: #fff;
+  }
+  .clogoFrame1 img{
+    width: 12px; height: 12px;
+    padding-top: 3px;
+  }
+  
+  .cFrame2 {
+    width: 220px; height: 150px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 15px;
+    background-color: #fff;
+  }
+  .cLogo2 {
+    width: 40px; height: 40px;
+    float: left; 
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: 1px solid #9a9a9a;
+    background-image: url(assets/svg/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+    background-color: #fff;
+  }
+  .clogoFrame2 h2{
+    display: inline-block;
+    font-size: 13px;
+    margin-top: 15px;
+  }
+  .cTex{
+    width: 150px; height: 75px;
+    /* background-color: #9a9a9a; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* -webkit-line-clamp: 6; */
+    -webkit-box-orient: vertical;
+  }
+  .cTex p{
+    display: block;
+    font-size: 10px;
+  }
+  .cTex span{
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .ask{
+    width: 200px; height: 30px;
+    border-radius: 23px;
+    background-color: #9a9a9a;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 9px;
+  }
+  .ask:hover{
+    background-color: #000;
+  }
+  .ask p{
+    display: inline-block;
+    font-size: 10px;
+    color: #fff;
+    font-weight: bold;
+  }
+  .cFrame3{
+    width: 220px; height: 50px;
+    background-color: #fff;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-left: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .cFrame3 p{
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-left: 10px;
+    
+  }
+  .cFrame3 a{
+    display: block;
+    width: 28px; height: 28px;
+    float: right;
+    margin-right: 10px;
+    margin-top: 13px;
+  }
+  .cFrame3 a img{
+    width: 100%; height: 100%;
+  }
+  .cBottom{
+    width: 221px; height: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 43%;
+  }
+  .cHome, .cMessege, .cSetting{
+    text-align: center;
+    cursor: pointer;
+  }
+  .cHome p, .cMessege p, .cSetting p{
+    display: block;
+    text-align: center;
+    font-size: 11px;
+  }
+  .cHome{
+    width: 45px; height: 45px;
+    margin-bottom: 5px;
+  }
+  .cHome img{
+    width: 29px; height: 29px;
+  }
+  .cMessege{
+    width: 45px; height: 45px;
+    margin-top: 2px;
+  }
+  .cMessege img{
+    width: 25px; height: 25px;
+  }
+  .cSetting{
+    width: 45px; height: 45px;
+  }
+  .cSetting img{
+    width: 27px; height: 27px;
+  }
+  
+  .mobile-chatBtn{
+    position: fixed; bottom: 5%; right: 5%;
+    width: 50px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  .mobile-chatBtn p{
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+  }
+  
+  .mobile-chatclose{
+    position: fixed; bottom: 5%; right: 5%;
+    width: 50px; height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .mobile-chatclose img{
+    width: 25px;
+  }
+}

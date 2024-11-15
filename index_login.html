@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>로그인</title>
+  <link rel="stylesheet" href="index_login.css">
+</head>
+<body>
+  <header class="mobile-mainHeader">
+
+    <div class="shopping">
+      <div class="shoppingFrame">
+          <h2>BAG (0)</h2>
+          <hr>
+          <p>empty cart.</p>
+          <hr>
+      </div>
+    </div>
+
+    <div class="shopping-overlay"></div> <!-- 쇼핑 오버레이 추가 -->
+
+    <img class="hamburger-mobile" src="assets/img/hamburger.png"/>
+    <a href="index.html">
+      <img class="logo-mobile" src="assets/svg/logo.svg"/>
+    </a>
+    <img class="bag-mobile" src="assets/img/bag.png" />
+    
+  </header>
+
+  <main>
+    <nav class="mobile-gnb">
+      <ul class="content-list">
+          <li>
+            <div class="frame">
+              <a href="index_modal.html" class="list-header">SHOP</a>
+              <img class="add-mobile" src="assets/img/add.png" />
+            </div>
+              <ul class="mobile-sub">
+                  <li>
+                      <a href="index_modal.html">all</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">new in</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">outwears</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">top</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">bottoms</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">dresses</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">bags</a>
+                  </li>
+                  <li>
+                      <a href="index_modal.html">accessories</a>
+                  </li>
+              </ul>
+          </li>
+          <li class="content-list">
+            <div class="frame">
+              <a href="index01.html" class="list-header">COLLECTION</a>
+            </div>
+          </li>
+          <li class="content-list">
+            <div class="frame">
+              <a href="index_modal.html" class="list-header">INFORMATION</a>
+            </div>
+          </li>
+      </ul>
+  </nav>
+    
+    <div class="login-container">
+
+      <input id="username" type="text" placeholder="ID" class="input-field" required>
+      <br>
+      <input id="password" type="password" placeholder="PASSWORD" class="input-field" required>
+
+      <div class="checkbox-container">
+        <input id="rememberme" type="checkbox"> <label for="rememberme">아이디 저장하기</label>
+      </div>
+
+      <button class="loginBtn" onclick="login()">로그인</button>
+      <button class="kakao" onclick="">
+        <img src="assets/img/카카오톡.png" alt="kakao">
+        카카오 로그인하기
+      </button>
+      <button class="naver" onclick="">
+        <img src="assets/img/naver-icon.png" alt="naver">
+        네이버 로그인하기
+      </button>
+      <button class="join" onclick="">
+        회원가입
+      </button>
+
+      <div class="link">
+        <a class="non-member" href="#">비회원 주문조회</a>
+        <p>|</p>
+        <a class="find-id" href="#">아이디 찾기</a>
+        <p>|</p>
+        <a class="find-password" href="#">비밀번호 찾기</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="Flogo-content">
+      <!-- <img class="Flogo" src="assets/svg/logo.svg" alt="logo"> -->
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 311.8 49.2" style="enable-background:new 0 0 311.8 49.2;" xml:space="preserve"><g><g><path d="M29.2,47.9H0C0,48.4,0,0,0,0s29.9,0,32.8,0c5.6,0,10.7,5.4,10.7,11.5c0,6.1-6.9,10.3-6.9,10.3S45.2,24,45.2,34
+        C45.2,48.2,29.2,47.9,29.2,47.9z M15,9.1v9c0,0,8.9,0,9.1,0c0.2,0,4.5-0.9,4.5-4.5c0-3.7-4.8-4.4-4.8-4.4H15z M15,27.8v9
+        c0,0,8.9,0,9.1,0c0.2,0,4.5-0.9,4.5-4.5c0-3.7-4.8-4.4-4.8-4.4H15z"></path><path d="M91.9,9.2v23.1c0,0-0.8,16.8-21.9,16.8c-21.1,0-21.7-16.8-21.7-16.8V9.1h15.6v23.2c0,0,0.5,4.4,6.2,4.4
+        c5.7,0,6.5-4.4,6.5-4.4V9.1L91.9,9.2z"></path><path d="M245,9.2v23.1c0,0-0.8,16.8-21.9,16.8c-21.1,0-21.7-16.8-21.7-16.8V9.1H217v23.2c0,0,0.5,4.4,6.2,4.4s6.5-4.4,6.5-4.4V9.1
+        L245,9.2z"></path><path d="M58,19.6"></path><path d="M58,19.6"></path><path d="M111.2,47.9c0,0,0-11,0-18.8c0-7.8,5.4-7.5,5.4-7.5h8.4V9.1h-3.8c-7.5,0-12.4,4.5-12.4,4.5L107,9.1H96.3v38.8H111.2z"></path><path d="M156.2,24.5v23.7h15.5V24.5c0,0,0.8-4.7,5.6-4.7c4.8,0,5.2,4.7,5.2,4.7v23.7H198V24.5c0,0,1.1-15.4-16.2-15.4
+        c0,0-8.5-0.8-13,6c0,0-2-6.1-12.9-6.1c-10.9,0-13.5,5.1-13.5,5.1l-2-5.1h-10.9v38.8h15.3V24.5c0,0,0-4.8,5.7-4.8
+        C156.2,19.7,156.2,24.5,156.2,24.5z"></path><path d="M145.2,24"></path><path d="M156,24"></path><path d="M248.7,3.3c0.5,0,15.4,0,15.4,0v44.3h-15.4V3.3z"></path><g><path d="M311.8,9.3v38.6h-10.6l-1.2-2.7c-3.2,2.6-7.4,4-12,4c-12.1,0-20.8-8.6-20.8-20.6c0-11.9,8.7-20.4,20.8-20.4
+            c4.7,0,8.8,1.5,12.1,4.1l1.4-3L311.8,9.3z M298.8,28.6c0-5-3.8-8.8-8.9-8.8c-5.1,0-8.9,3.8-8.9,8.8c0,5,3.8,8.8,8.9,8.8
+            C295.1,37.4,298.8,33.7,298.8,28.6z"></path></g></g></g></svg>
+    </div>
+
+    <div class="footer-link">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">TERMS OF USE</a>
+          </li>
+          <li>
+            <a href="#">PRIVACY POLICY</a>
+          </li>
+          <li>
+            <a href="#">ORDER TRACKING</a>
+          </li>
+          <li>
+            <a href="#">INSTAGRAM</a>
+          </li>
+          
+        </ul>
+      </nav>
+    </div>
+
+    <p class="domain">© 2024 BURMULA</p>
+  </footer>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  // 햄버거 버튼 클릭 시 네비게이션 토글
+  $('.hamburger-mobile').on('click', function() {
+        $('.mobile-gnb').stop(true, true).slideToggle(300, function() {
+            // 네비게이션이 보이면 헤더 배경색 추가, 숨기면 제거
+            if ($('.mobile-gnb').is(':visible')) {
+                $('.mobile-mainHeader').addClass('header-white-background');
+            } else {
+                $('.mobile-mainHeader').removeClass('header-white-background');
+            }
+        });
+    });
+    // add-mobile 버튼을 클릭할 때 서브메뉴 토글
+  $('.add-mobile').on('click', function() {
+    // add-mobile와 동일한 상위 요소 내의 서브메뉴만 토글
+    $(this).closest('li').find('.mobile-sub').slideToggle(300);
+
+    // 이미지 소스 토글
+    const currentSrc = $(this).attr('src');
+      const addSrc = "assets/img/add.png";     // 펼치기 이미지
+      const removeSrc = "assets/img/cancle.png"; // 접기 이미지
+
+      // 이미지 소스가 add일 경우 remove로 변경하고, 반대인 경우 add로 변경
+      if (currentSrc === addSrc) {
+          $(this).attr('src', removeSrc);
+      } else {
+          $(this).attr('src', addSrc);
+      }
+  });
+
+  // bag-mobile 버튼을 클릭했을 때 쇼핑 영역 표시
+  $('.bag-mobile').on('click', function() {
+      $('.shopping').addClass('open');  // 쇼핑 영역을 열림 상태로 변경
+      $('.shopping-overlay').fadeIn();  // 오버레이 표시
+  });
+
+  // 쇼핑 영역 외부를 클릭하면 쇼핑 영역 닫기
+  $('.shopping-overlay').on('click', function() {
+      $('.shopping').removeClass('open');  // 쇼핑 영역 닫음 상태로 변경
+      $('.shopping-overlay').fadeOut();    // 오버레이 숨기기
+  });
+</script>
+</html>
